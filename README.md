@@ -16,4 +16,4 @@ Version 1.2.1: Rework of Character class
 
 Version 1.2.2: Rework of first portion of Enemy class
 
-Version 1.3: Rework of main() and remainder of Enemy class
+Version 1.3: Rework of main()
