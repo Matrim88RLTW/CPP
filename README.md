@@ -5,7 +5,7 @@ If you are here, you are either lost, or somehow have been lured here by myself.
 
 This project is a project at building a top down tactical RPG. I am pushing myself by working heavily and primarily in the tensorflow lib, I have taken a liking to cluster algorithims and their use in unsupervised learning for enemy generation. While supervised learning seems particularly suited for the battle prediction and difficulty scaling. Need to read further into these areas for upcoming updates. Squirrel!
 
-Current build status: V1.3 : Taking a small break after Christmas then doing some research and hopefully work on updating the battle prediction by utilizing a feedforward neural network. 
+Current build status: V1.3 : Taking a small break after Christmas then doing some research and hopefully work on updating the battle prediction by testing a feedforward neural network. 
 
 
 Version 1: Butcher build
