@@ -8,7 +8,7 @@ This project is a project at building a top down tactical RPG. I am pushing myse
 Current build status: V1.3 : Taking a small break after Christmas then doing some research and hopefully work on updating the battle prediction by utilizing a feedforward neural network.
 
 
-Version 1: butcher build
+Version 1: Butcher build
 
 Version 1.2: Overhaul from initial butcher build
 
