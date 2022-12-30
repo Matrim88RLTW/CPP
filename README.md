@@ -17,3 +17,7 @@ Version 1.2.1: Rework of Character class
 Version 1.2.2: Rework of first portion of Enemy class
 
 Version 1.3: Rework of main()
+
+
+12/30/22 - Started main function of bug tracker
+12/29/22 - Added initial portion of bug tracker
