@@ -43,3 +43,12 @@ class BugTracker {
                 << ", reported by " << bugs_[i].reporter << ")\n";
     }
   }
+
+  int main(int argc, char* argv[]) {
+  // Create an instance of the bug tracker
+  BugTracker tracker;
+
+  // Add some bugs to the tracker
+  tracker.AddBug({"Crash on launch", "open", "John", "Alice"});
+  tracker.AddBug({"Wrong result", "open", "Mike", "Bob"});
+  tracker.PrintBugs();
