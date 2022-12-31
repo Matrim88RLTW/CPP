@@ -18,6 +18,7 @@ Version 1.2.2: Rework of first portion of Enemy class
 
 Version 1.3: Rework of main()
 
+12/31/22 - Various bug fixes and error corrections of V1.3
 
 12/30/22 - Started main function of bug tracker
 
