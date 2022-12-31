@@ -25,7 +25,8 @@ Version 1.3: Rework of main()
 12/29/22 - Added initial portion of bug tracker
 
 
-Character Battle
+**Character Battle**
+
 This program is a simple simulation of a character battle game. It includes a Character class with basic attributes and methods, as well as an Enemy class that inherits from the Character class and includes additional attributes and methods.
 
 Requirements
