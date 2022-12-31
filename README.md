@@ -1,5 +1,5 @@
 # CPP
-C++ showcase game
+**C++ showcase game**
 
 If you are here, you are either lost, or somehow have been lured here by myself. Either way, welcome!! Please take a look at my ongoing project for furthering my own abilities and education in C++ particularly. 
 
@@ -29,18 +29,21 @@ Version 1.3: Rework of main()
 
 This program is a simple simulation of a character battle game. It includes a Character class with basic attributes and methods, as well as an Enemy class that inherits from the Character class and includes additional attributes and methods.
 
-Requirements
+**Requirements**
+
 TensorFlow
 C++ compiler
-Compiling and Running the Program
+
+**Compiling and Running the Program**
+
 To compile the program, run the following command:
-
 g++ -std=c++11 character_battle.cpp -o character_battle
-To run the program, use the following command:
 
 
 
-Character Class
+
+**Character Class**
+
 The Character class represents a character in the game and has the following attributes:
 
 x and y: the x and y coordinates of the character on the game map
@@ -69,5 +72,7 @@ The Enemy class has the following additional methods:
 
 getExperiencePoints(): returns the experience points of the enemy
 getLoot(): returns the loot of the enemy
-TensorFlow Model
+
+**TensorFlow Model**
+
 The program also includes a simple TensorFlow model that predicts whether a character will win a battle based on various attributes. The model has two fully connected layers with 32 hidden units and a sigmoid activation function. It is trained using the Adam optimizer and the mean squared error loss function. The model is trained on a small dataset of past battles and then evaluated on the same dataset. The output of the model is a prediction of the probability of the character winning the battle.
