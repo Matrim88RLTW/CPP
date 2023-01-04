@@ -48,3 +48,9 @@ class BugTracker {
   // Create an instance of the bug tracker
   BugTracker tracker;
 
+    
+     // Add some bugs to the tracker
+  tracker.AddBug({"Crash on launch", "open", "John", "Alice"});
+  tracker.AddBug({"Wrong result", "open", "Mike", "Bob"});
+  tracker.PrintBugs();
+
