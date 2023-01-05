@@ -75,4 +75,4 @@ getLoot(): returns the loot of the enemy
 
 **TensorFlow Model**
 
-The program also includes a simple TensorFlow model that predicts whether a character will win a battle based on various attributes. The model has two fully connected layers with 32 hidden units and a sigmoid activation function. It is trained using the Adam optimizer and the mean squared error loss function. The model is trained on a small dataset of past battles and then evaluated on the same dataset. The output of the model is a prediction of the probability of the character winning the battle.
+The program also includes a simple TensorFlow model that predicts whether a character will win a battle based on various attributes. The model has two fully connected layers with 32 hidden units and a sigmoid activation function. It is trained using the Adam optimizer and the mean squared error loss function. The model is trained on a small dataset of past battles and then evaluated on the same dataset. The output of the model is a prediction of the probability of the character winning the battle.  
