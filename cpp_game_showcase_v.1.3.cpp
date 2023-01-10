@@ -55,13 +55,13 @@ std::vectorstd::string getLoot() { return loot; }
 
 int main() {
 // read in dataset of past battles
-std::vector<std::vector<float>> inputData = {
+std::vector<std::vector<double>> inputData = {
 {100, 15, 5, 3, 1, 50, 7, 3, 1, 1, 1},
 {30, 5, 2, 2, 1, 50, 7, 3, 1, 1, 0},
 {100, 15, 5, 3, 5, 70, 10, 4, 2, 3, 1},
 {70, 10, 4, 2, 3, 50, 7, 3, 1, 1, 0},
 };
-std::vector<std::vector<float>> outputData = {{1}, {0}, {1}, {0}};
+std::vector<std::vector<double>> outputData = {{1}, {0}, {1}, {0}};
 
 // compile and fit model
 std::vector<Tensor> output;
