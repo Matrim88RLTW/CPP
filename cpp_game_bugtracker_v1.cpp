@@ -49,8 +49,15 @@ class BugTracker {
   BugTracker tracker;
 
     
-     // Add some bugs to the tracker
+   // Add some bugs to the tracker
   tracker.AddBug({"Crash on launch", "open", "John", "Alice"});
   tracker.AddBug({"Wrong result", "open", "Mike", "Bob"});
   tracker.PrintBugs();
 
+
+  // Resolve the first bug and assign the second bug to a different person
+  tracker.SetStatus(0, "resolved");
+  tracker.AssignBug(1, "Alice");
+  tracker.PrintBugs();
+
+ 
