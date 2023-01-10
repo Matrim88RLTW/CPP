@@ -41,6 +41,10 @@ void useItem(std::string itemName);
 void levelUp();
 };
 
+public:
+  ~Character() {} // destructor
+};
+
 class Enemy : public Character {
 public:
 int experiencePoints;
@@ -51,6 +55,10 @@ Enemy(int x, int y, std::string image, int health, int attackPower, int defense,
 
 int getExperiencePoints() { return experiencePoints; }
 std::vectorstd::string getLoot() { return loot; }
+};
+
+public:
+  ~Enemy() {} // destructor
 };
 
 int main() {
