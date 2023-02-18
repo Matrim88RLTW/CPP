@@ -23,6 +23,8 @@ Version 1.3: Rework of main()
 
 12/29/22 - Added initial portion of bug tracker
 
+2/18/23 - Added start of character implementation 
+#Been awhile, sorry! Spent the last 60 days working on my Python projects as I was actively interviewing utilizing Python. But back at it now.
 
 **Character Battle**
 
