@@ -28,54 +28,24 @@ Version 1.3: Rework of main()
 
 2/19/23 - Added initial combat, movement and map modules
 
-**Character Battle**
+**Top-Down Tactical RPG Game**
 
-This program is a simple simulation of a character battle game. It includes a Character class with basic attributes and methods, as well as an Enemy class that inherits from the Character class and includes additional attributes and methods.
+**Overview**
+
+This is a simple top-down tactical RPG game written in C++ using the TensorFlow library. The game features a player-controlled character navigating a grid-based map, fighting enemies and collecting loot along the way. The game is won when the player reaches a certain level, and lost if the player is defeated in combat with an enemy.
 
 **Requirements**
 
-TensorFlow
-C++ compiler
+The game requires a C++ compiler and the TensorFlow library to be installed. The game has been tested on Linux and Windows operating systems.
 
-**Compiling and Running the Program**
+**Installation**
 
-To compile the program, run the following command:
-g++ -std=c++11 character_battle.cpp -o character_battle
+To install the game, follow these steps:
 
+Clone the repository to your local machine using the command git clone https://github.com/your_username/top-down-tactical-rpg.git
+Install the TensorFlow library by following the instructions on the TensorFlow website
+Compile the game by running the command g++ -std=c++11 -I /path/to/tensorflow/include -L /path/to/tensorflow/lib -ltensorflow game.cpp engine.cpp map.cpp combat.cpp -o game in the game directory
 
+**Usage**
 
-
-**Character Class**
-
-The Character class represents a character in the game and has the following attributes:
-
-x and y: the x and y coordinates of the character on the game map
-image: a string representing the image file for the character
-health: the current health points of the character
-attackPower: the attack power of the character
-defense: the defense of the character
-speed: the speed of the character
-level: the current level of the character
-inventory: a vector of strings representing the items in the character's inventory
-type: a string representing the type of the character (e.g. "enemy")
-name: a string representing the name of the character
-The Character class has the following methods:
-
-move(int newX, int newY): moves the character to the new x and y coordinates
-attack(Character& target): attacks the target character
-defend(int damage): reduces the character's health by the specified amount of damage
-useItem(std::string itemName): uses the specified item from the character's inventory
-levelUp(): increases the character's level by 1
-Enemy Class
-The Enemy class represents an enemy character in the game and inherits from the Character class. It has the additional attributes:
-
-experiencePoints: the number of experience points that the enemy gives when defeated
-loot: a vector of strings representing the items that the enemy drops when defeated
-The Enemy class has the following additional methods:
-
-getExperiencePoints(): returns the experience points of the enemy
-getLoot(): returns the loot of the enemy
-
-**TensorFlow Model**  
-
-The program also includes a simple TensorFlow model that predicts whether a character will win a battle based on various attributes. The model has two fully connected layers with 32 hidden units and a sigmoid activation function. It is trained using the Adam optimizer and the mean squared error loss function. The model is trained on a small dataset of past battles and then evaluated on the same dataset. The output of the model is a prediction of the probability of the character winning the battle.  
+To start the game, run the compiled executable game in the game directory. Use the w, a, s, and d keys to move the player character up, left, down, and right, respectively. Fight enemies by moving onto their tile, and collect loot by defeating them. The game is won when the player reaches level 10, and lost if the player is defeated in combat.
