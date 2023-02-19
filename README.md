@@ -42,7 +42,7 @@ The game requires a C++ compiler and the TensorFlow library to be installed. The
 
 To install the game, follow these steps:
 
-Clone the repository to your local machine using the command git clone https://github.com/your_username/top-down-tactical-rpg.git
+Clone the repository to your local machine
 Install the TensorFlow library by following the instructions on the TensorFlow website
 Compile the game by running the command g++ -std=c++11 -I /path/to/tensorflow/include -L /path/to/tensorflow/lib -ltensorflow game.cpp engine.cpp map.cpp combat.cpp -o game in the game directory
 
