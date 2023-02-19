@@ -1,0 +1,58 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int MAP_WIDTH = 10;
+const int MAP_HEIGHT = 10;
+
+class Map {
+public:
+    Map() {
+        // Initialize the map with empty spaces
+        for (int y = 0; y < MAP_HEIGHT; y++) {
+            vector<char> row;
+            for (int x = 0; x < MAP_WIDTH; x++) {
+                row.push_back(' ');
+            }
+            map.push_back(row);
+        }
+    }
+
+    void print() {
+        // Print the map to the console
+        for (int y = 0; y < MAP_HEIGHT; y++) {
+            for (int x = 0; x < MAP_WIDTH; x++) {
+                cout << map[y][x];
+            }
+            cout << endl;
+        }
+    }
+
+    void set(int x, int y, char c) {
+        // Set a character at a specific position on the map
+        if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
+            map[y][x] = c;
+        }
+    }
+
+    char get(int x, int y) {
+        // Get the character at a specific position on the map
+        if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
+            return map[y][x];
+        } else {
+            return ' ';
+        }
+    }
+
+private:
+    vector<vector<char>> map;
+};
+
+int main() {
+    Map map;
+    map.set(0, 0, '#');
+    map.set(9, 9, '#');
+    map.print();
+    return 0;
+}
