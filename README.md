@@ -25,6 +25,7 @@ Version 1.3: Rework of main()
 
 2/18/23 - Added start of character implementation 
 #Been awhile, sorry! Spent the last 60 days working on my Python projects as I was actively interviewing utilizing Python. But back at it now.
+2/19/23 - Added initial combat, movement and map modules
 
 **Character Battle**
 
