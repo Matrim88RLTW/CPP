@@ -3,7 +3,7 @@ This code is a C++ program that uses TensorFlow to build and fit a machine learn
 The program defines two classes: Character and Enemy, which represent characters in a game and their attributes such as position, health, and inventory. 
 The main function reads in a dataset of past battles and compiles and fits a model to predict the outcome of future battles. 
 The model consists of two layers with sigmoid activations, and the loss is calculated using mean squared error. 
-The program then initializes variables, initializes a session, and runs the model on the input data to predict the outcomes of future battles.
+The program then initialize variables, initializes a session, and runs the model on the input data to predict the outcomes of future battles.
 */
 #include <iostream>
 #include <string>
