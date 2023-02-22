@@ -18,7 +18,6 @@ public:
             map.push_back(row);
         }
     }
-
     void print() {
         // Print the map to the console
         for (int y = 0; y < MAP_HEIGHT; y++) {
