@@ -1,0 +1,33 @@
+#ifndef MAP_H
+#define MAP_H
+
+#include <vector>
+
+// Define the dimensions of the map
+const int MAP_WIDTH = 10;
+const int MAP_HEIGHT = 10;
+
+// Define the tile types
+const char TILE_GRASS = '.';
+const char TILE_WALL = '#';
+const char TILE_WATER = '~';
+
+class Map {
+public:
+    // Initialize the map with a default tile type
+    Map();
+
+    // Set a tile at a specific location
+    void set(int x, int y, char tile);
+
+    // Get the tile at a specific location
+    char get(int x, int y) const;
+
+    // Print the map to the console
+    void print() const;
+
+private:
+    std::vector<std::vector<char>> tiles;
+};
+
+#endif
