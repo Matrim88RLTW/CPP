@@ -17,6 +17,8 @@ Version 1.2.2: Rework of first portion of Enemy class
 
 Version 1.3: Rework of main()
 
+Version 2.0: Standardization and quality of life changes for moving forward with the project
+
 12/29/22 - Added initial portion of bug tracker
 
 12/31/22 - Various bug fixes and error corrections of V1.3
@@ -27,6 +29,8 @@ Version 1.3: Rework of main()
 #Been awhile, sorry! Spent the last 60 days working on my Python projects as I was actively interviewing utilizing Python. But back at it now.
 
 2/19/23 - Added initial combat, movement and map modules
+
+3/1/23 - Uploaded latest modules as v2.0, cleaned up the interactions and added industry standard/QOL changes.
 
 **Top-Down Tactical RPG Game**
 
