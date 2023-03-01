@@ -3,7 +3,7 @@
 
 If you are here, you are either lost, or somehow have been lured here by myself. Either way, welcome!! Please take a look at my ongoing project for furthering my own abilities and education in C++ particularly. 
 
-This is a project at building a top down tactical RPG. I am pushing myself by working heavily and primarily in the tensorflow lib, I have taken a liking to cluster algorithims and their use in unsupervised learning for enemy generation. While supervised learning seems particularly suited for the battle prediction and difficulty scaling. Need to read further into these areas for upcoming updates. 
+This is a project at building a top down tactical RPG. I have taken a liking to cluster algorithims and their use in unsupervised learning for enemy generation. While supervised learning seems particularly suited for the battle prediction and difficulty scaling. Need to read further into these areas for upcoming updates. 
 
 Current build status: V1.3 : Working my way through initial modules for the build.
 
@@ -34,22 +34,20 @@ Version 2.0: Standardization and quality of life changes for moving forward with
 
 **Top-Down Tactical RPG Game**
 
-**Overview**
+Overview
 
-This is a simple top-down tactical RPG game written in C++ using the TensorFlow library. The game features a player-controlled character navigating a grid-based map, fighting enemies and collecting loot along the way. The game is won when the player reaches a certain level, and lost if the player is defeated in combat with an enemy.
+This is a simple top-down tactical RPG game written in C++. The game features a player-controlled character navigating a grid-based map, fighting enemies and collecting loot along the way. The game is won when the player reaches a certain level, and lost if the player is defeated in combat with an enemy.
 
-**Requirements**
+Requirements
 
-The game requires a C++ compiler and the TensorFlow library to be installed. The game has been tested on Linux and Windows operating systems.
+The game requires a C++ compiler to be installed. The game has been tested on Linux and Windows operating systems.
 
-**Installation**
+Installation
 
 To install the game, follow these steps:
 
 Clone the repository to your local machine
-Install the TensorFlow library by following the instructions on the TensorFlow website
-Compile the game by running the command g++ -std=c++11 -I /path/to/tensorflow/include -L /path/to/tensorflow/lib -ltensorflow game.cpp engine.cpp map.cpp combat.cpp -o game in the game directory
-
-**Usage** <-- No runnable in current build
+Compile the game by running the command g++ -std=c++11 game.cpp engine.cpp map.cpp combat.cpp -o game in the game directory
+Usage
 
 To start the game, run the compiled executable game in the game directory. Use the w, a, s, and d keys to move the player character up, left, down, and right, respectively. Fight enemies by moving onto their tile, and collect loot by defeating them. The game is won when the player reaches level 10, and lost if the player is defeated in combat.
