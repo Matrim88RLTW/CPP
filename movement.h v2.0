@@ -1,0 +1,21 @@
+#ifndef MOVEMENT_H
+#define MOVEMENT_H
+
+#include "engine.h"
+#include "map.h"
+#include "character.h"
+
+class Movement {
+public:
+    Movement(Engine& engine, Map& map, Character& player);
+
+    // Move the character on the map based on user input
+    bool move(char direction);
+
+private:
+    Engine& engine_;
+    Map& map_;
+    Character& player_;
+};
+
+#endif
