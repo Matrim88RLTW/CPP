@@ -1,0 +1,28 @@
+#include "movement.h"
+
+Movement::Movement(Engine& engine, Map& map, Character& player)
+    : engine_(engine), map_(map), player_(player) {}
+
+bool Movement::move(char direction) {
+    int dx = 0, dy = 0;
+    if (direction == 'w') {
+        dy = -1;
+    } else if (direction == 'a') {
+        dx = -1;
+    } else if (direction == 's') {
+        dy = 1;
+    } else if (direction == 'd') {
+        dx = 1;
+    }
+    int new_x = player_.x + dx;
+    int new_y = player_.y + dy;
+
+    if (engine_.checkValidMove(new_x, new_y)) {
+        map_.set(player_.x, player_.y, ' ');
+        engine_.movePlayer(dx, dy);
+        map_.set(player_.x, player_.y, player_.image);
+        return true;
+    }
+
+    return false;
+}
