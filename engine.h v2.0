@@ -1,0 +1,24 @@
+#pragma once
+
+#include <vector>
+#include "character.h"
+#include "map.h"
+
+class Engine {
+public:
+    Engine();
+    void initialize();
+    bool checkValidMove(int x, int y);
+    void movePlayer(int dx, int dy);
+    Character& getPlayer();
+    Enemy getEnemy();
+private:
+    std::vector<Enemy> enemies_;
+    int numEnemies_;
+    Character player_;
+    Map gameMap_;
+    int mapWidth_;
+    int mapHeight_;
+    void generateMap();
+    void generateEnemies();
+};
