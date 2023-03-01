@@ -1,0 +1,62 @@
+#include "engine.h"
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+
+Engine::Engine() : player_(0, 0, '@') {}
+
+void Engine::initialize() {
+    generateMap();
+    generateEnemies();
+}
+
+void Engine::movePlayer(int dx, int dy) {
+    player_.x += dx;
+    player_.y += dy;
+}
+
+bool Engine::checkValidMove(int x, int y) {
+    if (x < 0 || y < 0 || x >= mapWidth_ || y >= mapHeight_) {
+        return false;
+    }
+    if (gameMap_.get(x, y) != '.') {
+        return false;
+    }
+    return true;
+}
+
+Character& Engine::getPlayer() {
+    return player_;
+}
+
+Enemy Engine::getEnemy() {
+    int index = rand() % numEnemies_;
+    return enemies_[index];
+}
+
+void Engine::generateMap() {
+    std::ifstream mapFile("map.txt");
+    if (mapFile.fail()) {
+        std::cerr << "Failed to open map file" << std::endl;
+        exit(1);
+    }
+
+    std::string line;
+    while (std::getline(mapFile, line)) {
+        for (int i = 0; i < line.size(); i++) {
+            gameMap_.set(i, mapHeight_, line[i]);
+        }
+        mapHeight_++;
+    }
+    mapWidth_ = gameMap_.getWidth();
+}
+
+void Engine::generateEnemies() {
+    numEnemies_ = 10;
+    for (int i = 0; i < numEnemies_; i++) {
+        int x = rand() % mapWidth_;
+        int y = rand() % mapHeight_;
+        enemies_.push_back(Enemy(x, y, 'E'));
+    }
+}
