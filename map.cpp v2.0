@@ -1,0 +1,21 @@
+#include "map.h"
+#include <iostream>
+
+Map::Map() : tiles(MAP_WIDTH, std::vector<char>(MAP_HEIGHT, TILE_GRASS)) {}
+
+void Map::set(int x, int y, char tile) {
+    tiles[x][y] = tile;
+}
+
+char Map::get(int x, int y) const {
+    return tiles[x][y];
+}
+
+void Map::print() const {
+    for (int y = 0; y < MAP_HEIGHT; y++) {
+        for (int x = 0; x < MAP_WIDTH; x++) {
+            std::cout << get(x, y) << " ";
+        }
+        std::cout << std::endl;
+    }
+}
