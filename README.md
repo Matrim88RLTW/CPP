@@ -17,11 +17,11 @@ Version 1.2.2: Rework of first portion of Enemy class
 
 Version 1.3: Rework of main()
 
+12/29/22 - Added initial portion of bug tracker
+
 12/31/22 - Various bug fixes and error corrections of V1.3
 
 12/30/22 - Started main function of bug tracker
-
-12/29/22 - Added initial portion of bug tracker
 
 2/18/23 - Added start of character implementation 
 #Been awhile, sorry! Spent the last 60 days working on my Python projects as I was actively interviewing utilizing Python. But back at it now.
