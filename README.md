@@ -46,6 +46,6 @@ Clone the repository to your local machine
 Install the TensorFlow library by following the instructions on the TensorFlow website
 Compile the game by running the command g++ -std=c++11 -I /path/to/tensorflow/include -L /path/to/tensorflow/lib -ltensorflow game.cpp engine.cpp map.cpp combat.cpp -o game in the game directory
 
-**Usage**
+**Usage** <-- No runnable in current build
 
 To start the game, run the compiled executable game in the game directory. Use the w, a, s, and d keys to move the player character up, left, down, and right, respectively. Fight enemies by moving onto their tile, and collect loot by defeating them. The game is won when the player reaches level 10, and lost if the player is defeated in combat.
