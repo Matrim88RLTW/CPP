@@ -1,0 +1,153 @@
+// Ever increasing array solution
+#include <vector>
+#include <algorithm>
+#include <climits>
+
+using namespace std;
+
+class Solution {
+public:
+    int makeArrayIncreasing(vector<int>& arr1, vector<int>& arr2) {
+        sort(arr2.begin(), arr2.end()); // sort arr2 in ascending order
+
+        const int n = arr1.size();
+        vector<long long> dp(n + 1, INT_MAX);
+        dp[0] = 0; // initialize dp[0] to 0
+
+        for (int i = 1; i <= n; ++i) {
+            vector<long long> ndp(dp); // copy values from dp to ndp
+
+            if (arr1[i - 1] > dp[i - 1]) { // case 1: no operation needed
+                ndp[i] = dp[i - 1];
+            }
+
+            int pos = lower_bound(arr2.begin(), arr2.end(), arr1[i - 1]) - arr2.begin();
+            if (pos < arr2.size()) { // case 2: perform an operation using arr2[pos]
+                ndp[i] = min(ndp[i], (long long)arr2[pos] + 1 + dp[i - 1]);
+            }
+
+            if (i > 1) { // case 3: perform an operation using arr1[i-2] and arr2[pos]
+                int prev = lower_bound(arr2.begin(), arr2.end(), arr1[i - 2]) - arr2.begin();
+                if (prev < arr2.size() && arr2[prev] < arr1[i - 1]) {
+                    ndp[i] = min(ndp[i], (long long)arr2[prev] + 1 + dp[i - 2]);
+                }
+            }
+
+            dp = ndp;
+        }
+
+        return dp[n] == INT_MAX ? -1 : (int)dp[n];
+    }
+};
+
+arr1 = [1,5,3,6,7]
+arr2 = [1,3,2,4]
+
+// fizzbuzz solution
+
+
+#include <iostream>
+#include <string>
+
+std::string reverseString(std::string str) {
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++)
+    {
+        std::swap(str[i], str[n - i - 1]);
+    }
+
+    return str;
+}
+
+int main() {
+    std::string myString = "Hello, world!";
+    std::cout << "Original string: " << myString << std::endl;
+
+    std::string reversedString = reverseString(myString);
+    std::cout << "Reversed string: " << reversedString << std::endl;
+
+    return 0;
+}
+int main()
+{
+    // initialize a string called name with the value "geeksforgeeks"
+    string name = "geeksforgeeks";
+ 
+    // call getreverse with name and 0 as arguments
+    getreverse(name, 0);
+
+    // output the reversed string to the console
+    cout << name << endl;
+
+    // return 0 to indicate successful program completion
+    return 0;
+}
+
+// cin/cout 'basic' solution
+
+#include <iostream>
+int addNumbers (int first_param, int second_param) {
+    
+    int result = first_param + second_param;
+    return result;
+}
+
+int main() {
+    
+    int first_number {3};
+    int second_number {7};
+
+    std::cout << "First number : " << first_number << std::endl;
+    std::cout << "Second number : " << second_number << std::endl;
+    
+    int sum = first_number + second_number;
+    std::cout << "Sum : " << sum << std::endl;
+    
+    sum = addNumbers(30, 54);
+    std::cout << "Sum : " << sum << std::endl;
+    
+    std::cout << "Sum : " << addNumbers(3,24) << std::endl;
+    
+    int third_number;
+    int fourth_number;
+    
+    std::cout << "First number is : " << std::endl;
+    std::cin >> third_number;
+    
+    std::cout << "Second number is : " << std::endl;
+    std::cin >> fourth_number;
+    
+    std::cout << "Sum : " << addNumbers(third_number, fourth_number) << std::endl;
+    
+    int fifth_number;
+    int sixth_number;
+    
+    std::cout << "Enter the two numbers you wish to add seperated by a space : " << std::endl;
+    std::cin >> fifth_number >> sixth_number ;
+    
+    std::cout << "Sum : " << addNumbers(fifth_number, sixth_number) << std::endl;
+    return 0;
+}
+
+// reverse linked list solution
+
+LinkedListNode* reverseLinkedList(LinkedListNode* head) {
+    // initialize the previous, current, and next nodes
+    LinkedListNode* prev = nullptr;
+    LinkedListNode* current = head;
+    LinkedListNode* next = nullptr;
+    
+    // traverse the list and reverse the pointers
+    while (current != nullptr) {
+        next = current->next_; // save the next node
+        current->next_ = prev; // reverse the pointer
+        prev = current; // move to the next node
+        current = next;
+    }
+    
+    // set the new head of the list to the last node
+    head = prev;
+    
+    // return the new head of the list
+    return head;
+}
