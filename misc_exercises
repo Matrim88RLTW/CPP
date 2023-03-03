@@ -151,3 +151,21 @@ LinkedListNode* reverseLinkedList(LinkedListNode* head) {
     // return the new head of the list
     return head;
 }
+
+// palindrome solution
+bool hasPalindromePermutation(const std::string& str) {
+    // use a set to keep track of the characters that appear an odd number of times
+    std::unordered_set<char> oddChars;
+    
+    // traverse the string and count the number of occurrences of each character
+    for (char c : str) {
+        if (oddChars.count(c)) {
+            oddChars.erase(c); // remove c if it already appeared an odd number of times
+        } else {
+            oddChars.insert(c); // add c if it appeared an even number of times
+        }
+    }
+    
+    // check if the number of odd characters is less than or equal to 1
+    return oddChars.size() <= 1;
+}
