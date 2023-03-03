@@ -45,6 +45,26 @@ arr2 = [1,3,2,4]
 
 // fizzbuzz solution
 
+#include <iostream>
+
+int main(void) {
+    for (int i = 1; i < 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0){
+            std::cout << "FizzBuzz" << std::endl;
+        }
+        else if (i % 5 == 0){
+            std::cout << "Buzz" << std::endl;
+        }
+        else if (i % 3 == 0){
+            std::cout << "Fizz" << std::endl;
+    }
+        else
+            std::cout << i << std::endl;
+}
+    return 0;
+} 
+
+// reverse string
 
 #include <iostream>
 #include <string>
@@ -83,7 +103,7 @@ int main()
     return 0;
 }
 
-// cin/cout 'basic' solution
+// cin/cout 'basic' syntax
 
 #include <iostream>
 int addNumbers (int first_param, int second_param) {
