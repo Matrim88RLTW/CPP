@@ -1,0 +1,202 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <climits>
+#include <unordered_set>
+
+// Problem 1: Ever increasing array solution
+class Solution {
+public:
+    int makeArrayIncreasing(std::vector<int>& arr1, std::vector<int>& arr2) {
+        std::sort(arr2.begin(), arr2.end()); // sort arr2 in ascending order
+
+        const int n = arr1.size();
+        std::vector<long long> dp(n + 1, INT_MAX);
+        dp[0] = 0; // initialize dp[0] to 0
+
+        for (int i = 1; i <= n; ++i) {
+            std::vector<long long> ndp(dp); // copy values from dp to ndp
+
+            if (arr1[i - 1] > dp[i - 1]) { // case 1: no operation needed
+                ndp[i] = dp[i - 1];
+            }
+
+            int pos = std::lower_bound(arr2.begin(), arr2.end(), arr1[i - 1]) - arr2.begin();
+            if (pos < arr2.size()) { // case 2: perform an operation using arr2[pos]
+                ndp[i] = std::min(ndp[i], (long long)arr2[pos] + 1 + dp[i - 1]);
+            }
+
+            if (i > 1) { // case 3: perform an operation using arr1[i-2] and arr2[pos]
+                int prev = std::lower_bound(arr2.begin(), arr2.end(), arr1[i - 2]) - arr2.begin();
+                if (prev < arr2.size() && arr2[prev] < arr1[i - 1]) {
+                    ndp[i] = std::min(ndp[i], (long long)arr2[prev] + 1 + dp[i - 2]);
+                }
+            }
+
+            dp = ndp;
+        }
+
+        return dp[n] == INT_MAX ? -1 : (int)dp[n];
+    }
+};
+
+// Problem 2: Fizzbuzz solution
+void fizzbuzz() {
+    for (int i = 1; i < 100; i++) {
+        if (i % 3 == 0 && i % 5 == 0){
+            std::cout << "FizzBuzz" << std::endl;
+        }
+        else if (i % 5 == 0){
+            std::cout << "Buzz" << std::endl;
+        }
+        else if (i % 3 == 0){
+            std::cout << "Fizz" << std::endl;
+        }
+        else {
+            std::cout << i << std::endl;
+        }
+    }
+}
+
+// Problem 3: Reverse string solution
+std::string reverseString(std::string str) {
+    int n = str.length();
+    for (int i = 0; i < n / 2; i++) {
+        std::swap(str[i], str[n - i - 1]);
+    }
+
+    return str;
+}
+
+// Problem 4: cin/cout basic syntax
+int addNumbers (int first_param, int second_param) {
+    int result = first_param + second_param;
+    return result;
+}
+
+void cinCoutExample() {
+    int first_number {3};
+    int second_number {7};
+
+    std::cout << "First number : " << first_number << std::endl;
+    std::cout << "Second number : " << second_number << std::endl;
+    
+    int sum = first_number + second_number;
+    std::cout <<     "Sum : " << sum << std::endl;
+    
+    sum = addNumbers(30, 54);
+    std::cout << "Sum : " << sum << std::endl;
+    
+    std::cout << "Sum : " << addNumbers(3,24) << std::endl;
+    
+    int third_number;
+    int fourth_number;
+    
+    std::cout << "First number is : " << std::endl;
+    std::cin >> third_number;
+    
+    std::cout << "Second number is : " << std::endl;
+    std::cin >> fourth_number;
+    
+    std::cout << "Sum : " << addNumbers(third_number, fourth_number) << std::endl;
+    
+    int fifth_number;
+    int sixth_number;
+    
+    std::cout << "Enter the two numbers you wish to add seperated by a space : " << std::endl;
+    std::cin >> fifth_number >> sixth_number ;
+    
+    std::cout << "Sum : " << addNumbers(fifth_number, sixth_number) << std::endl;
+}
+
+// Problem 5: Reverse linked list solution
+struct LinkedListNode {
+    int value_;
+    LinkedListNode* next_;
+};
+
+LinkedListNode* reverseLinkedList(LinkedListNode* head) {
+    // initialize the previous, current, and next nodes
+    LinkedListNode* prev = nullptr;
+    LinkedListNode* current = head;
+    LinkedListNode* next = nullptr;
+    
+    // traverse the list and reverse the pointers
+    while (current != nullptr) {
+        next = current->next_; // save the next node
+        current->next_ = prev; // reverse the pointer
+        prev = current; // move to the next node
+        current = next;
+    }
+    
+    // set the new head of the list to the last node
+    head = prev;
+    
+    // return the new head of the list
+    return head;
+}
+
+// Problem 6: Palindrome solution
+bool hasPalindromePermutation(const std::string& str) {
+    // use a set to keep track of the characters that appear an odd number of times
+    std::unordered_set<char> oddChars;
+    
+    // traverse the string and count the number of occurrences of each character
+    for (char c : str) {
+        if (oddChars.count(c)) {
+            oddChars.erase(c); // remove c if it already appeared an odd number of times
+        } else {
+            oddChars.insert(c); // add c if it appeared an even number of times
+        }
+    }
+    
+    // check if the number of odd characters is less than or equal to 1
+    return oddChars.size() <= 1;
+}
+
+int main() {
+    // Problem 1: Ever increasing array
+    std::vector<int> arr1 = {1, 5, 3, 6, 7};
+    std::vector<int> arr2 = {1, 3, 2, 4};
+    Solution solution;
+    std::cout << "Ever increasing array solution: " << solution.makeArrayIncreasing(arr1, arr2) << std::endl;
+
+    // Problem 2: Fizzbuzz
+    std::cout << "Fizzbuzz solution:" << std::endl;
+    fizzbuzz();
+
+    // Problem 3: Reverse string
+    std::string myString = "Hello, world!";
+    std::cout << "Original string: " << myString << std::endl;
+    std::string reversedString = reverseString(myString);
+    std::cout << "Reversed string: " << reversedString << std::endl;
+
+    // Problem 4: cin/cout basic
+    cinCoutExample();
+
+    // Problem 5: Reverse linked list
+    LinkedListNode* head = new LinkedListNode{1, new LinkedListNode{2, new LinkedListNode{3, nullptr}}};
+    std::cout << "Original linked list:" << std::endl;
+    LinkedListNode* current = head;
+    while (current != nullptr) {
+        std::cout << current->value_ << " ";
+        current = current->next_;
+    }
+    std::cout << std::endl;
+
+    LinkedListNode* newHead = reverseLinkedList(head);
+    std::cout << "Reversed linked list:" << std::endl;
+    current = newHead;
+    while (current != nullptr) {
+        std::cout << current->value_ << " ";
+        current = current->next_;
+    }
+    std::cout << std::endl;
+
+    // Problem 6: Palindrome
+    std::cout << "Has palindrome permutation of 'civic': " << hasPalindromePermutation("civic") << std::endl;
+    std::cout << "Has palindrome permutation of 'ivicc': " << hasPalindromePermutation("ivicc") << std::endl;
+    std::cout << "Has palindrome permutation of 'civil': " << hasPalindromePermutation("civil") << std::endl;
+
+    return 0;
+}
