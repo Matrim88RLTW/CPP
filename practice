@@ -3,6 +3,7 @@ Given the following 9 numbers write for me a function that gives me the highest 
 these numbers and the lowest sum of 8 of these numbers.
 */
 
+// Could use lagrange multipliers with a given constraint
 
 #include <iostream>
 #include <algorithm>
@@ -30,37 +31,47 @@ Given the following numbers write for me a function that takes these numbers and
 number of occurrances of the maximum number found in the numbers and the number of occurances
 of the minimum number found in the list.
 */
-
+// Include necessary headers
 #include <vector>
 #include <algorithm>
 
+// Define a function that counts the occurrences of the maximum and minimum numbers in a vector
 std::pair<int, int> countMinMax(const std::vector<int>& numbers) {
+    // Check if the input vector is empty
     if (numbers.empty()) {
-        return {0, 0};
+        return {0, 0};  // If it is, return a pair of zeros
     }
     
+    // Find the maximum and minimum numbers in the vector
     int maxNum = *std::max_element(numbers.begin(), numbers.end());
     int minNum = *std::min_element(numbers.begin(), numbers.end());
     
+    // Initialize counters for the number of occurrences of max and min
     int maxCount = 0, minCount = 0;
     
+    // Iterate over the vector and count the occurrences of max and min
     for (int num : numbers) {
         if (num == maxNum) {
-            maxCount++;
+            maxCount++;  // Increment maxCount if the current element is equal to maxNum
         }
         if (num == minNum) {
-            minCount++;
+            minCount++;  // Increment minCount if the current element is equal to minNum
         }
     }
     
+    // Return a pair of the counts of occurrences of max and min
     return {maxCount, minCount};
 }
 
+// Define the main function to test the countMinMax function
 int main() {
+    // Initialize a vector of integers
     std::vector<int> numbers = {9, -5, 20, 27, 2, 12, -5, 27};
 
+    // Call the countMinMax function with the vector and store the result in a pair
     auto result = countMinMax(numbers);
 
+    // Print the number of occurrences of max and min using the pair returned by countMinMax
     std::cout << "Number of occurrences of max: " << result.first << std::endl;
     std::cout << "Number of occurrences of min: " << result.second << std::endl;
 
