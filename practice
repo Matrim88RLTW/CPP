@@ -1,0 +1,68 @@
+/*
+Given the following 9 numbers write for me a function that gives me the highest sum of 8 of
+these numbers and the lowest sum of 8 of these numbers.
+*/
+
+
+#include <iostream>
+#include <algorithm>
+#include <numeric>
+#include <vector>
+
+int main() {
+    std::vector<int> nums = {-22, -10, 32, 5, 20, 9, -6, 52, 2};
+    std::sort(nums.begin(), nums.end());
+
+    // Calculate highest sum of 8 numbers
+    int highestSum = std::accumulate(nums.end() - 8, nums.end(), 0);
+
+    // Calculate lowest sum of 8 numbers
+    int lowestSum = std::accumulate(nums.begin(), nums.begin() + 8, 0);
+
+    std::cout << "Highest sum of 8 numbers: " << highestSum << std::endl;
+    std::cout << "Lowest sum of 8 numbers: " << lowestSum << std::endl;
+
+    return 0;
+}
+
+/*
+Given the following numbers write for me a function that takes these numbers and tells me the
+number of occurrances of the maximum number found in the numbers and the number of occurances
+of the minimum number found in the list.
+*/
+
+#include <vector>
+#include <algorithm>
+
+std::pair<int, int> countMinMax(const std::vector<int>& numbers) {
+    if (numbers.empty()) {
+        return {0, 0};
+    }
+    
+    int maxNum = *std::max_element(numbers.begin(), numbers.end());
+    int minNum = *std::min_element(numbers.begin(), numbers.end());
+    
+    int maxCount = 0, minCount = 0;
+    
+    for (int num : numbers) {
+        if (num == maxNum) {
+            maxCount++;
+        }
+        if (num == minNum) {
+            minCount++;
+        }
+    }
+    
+    return {maxCount, minCount};
+}
+
+int main() {
+    std::vector<int> numbers = {9, -5, 20, 27, 2, 12, -5, 27};
+
+    auto result = countMinMax(numbers);
+
+    std::cout << "Number of occurrences of max: " << result.first << std::endl;
+    std::cout << "Number of occurrences of min: " << result.second << std::endl;
+
+    return 0;
+}
