@@ -77,3 +77,34 @@ int main() {
 
     return 0;
 }
+
+// Second Approach to Unique Number of Occurrences
+#include <iostream>
+#include <vector>
+#include <map>
+
+std::pair<int, int> countOccurrences(const std::vector<int>& nums) {
+    if (nums.empty()) {
+        return {0, 0};
+    }
+
+    std::map<int, int> count_map;
+    for (int num : nums) {
+        count_map[num]++;
+    }
+    
+    int max_num = count_map.rbegin()->first;
+    int min_num = count_map.begin()->first;
+    
+    return {count_map[max_num], count_map[min_num]};
+}
+
+int main() {
+    std::vector<int> nums = {9, -5, 20, 27, 2, 12, -5, 27};
+    auto [max_occurrences, min_occurrences] = countOccurrences(nums);
+    
+    std::cout << "Number of occurrences of the maximum number: " << max_occurrences << std::endl;
+    std::cout << "Number of occurrences of the minimum number: " << min_occurrences << std::endl;
+    
+    return 0;
+}
