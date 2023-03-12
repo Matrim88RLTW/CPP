@@ -31,6 +31,9 @@ Given the following numbers write for me a function that takes these numbers and
 number of occurrances of the maximum number found in the numbers and the number of occurances
 of the minimum number found in the list.
 */
+
+// std::max_element and std::min_element utilization
+
 // Include necessary headers
 #include <vector>
 #include <algorithm>
@@ -79,6 +82,10 @@ int main() {
 }
 
 // Second Approach to Unique Number of Occurrences
+
+// unordered map utilization
+
+
 #include <iostream>
 #include <vector>
 #include <map>
