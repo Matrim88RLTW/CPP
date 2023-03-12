@@ -3,7 +3,7 @@ Given the following 9 numbers write for me a function that gives me the highest 
 these numbers and the lowest sum of 8 of these numbers.
 */
 
-// Could use lagrange multipliers with a given constraint
+// Could use lagrange multipliers with a given constraint, but for now, std::sort and std::accumulate utilization
 
 #include <iostream>
 #include <algorithm>
